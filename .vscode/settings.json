@@ -29,5 +29,6 @@
             "connectionTimeout": 30,
             "username": "root"
         }
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

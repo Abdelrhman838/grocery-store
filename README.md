@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # python_projects_grocery_webapp
 In this python project, we will build a grocery store management application. It will be 3 tier application,
 1. Front end: UI is written in HTML/CSS/Javascript/Bootstrap
@@ -21,3 +22,6 @@ The grocery management system that we built is functional but after we give it t
 4. **Orders Module**: In new order page there is a bug. When you manually change total price of an item it doesn't change the grand total. You need to fix this issue.
 5. **Orders Module**: In the grid where orders are listed, add a view button in the last column. On clicking this button it should show you order details where individual items in that order are listed along with their price/quantity etc.
 
+=======
+grocery project
+>>>>>>> 6a03220248104519a973b4b8f79207849c200d90

@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for, session
 from sql_conection import get_sql_conector
-import product_dao,uom_dao
+import product_dao ,uom_dao
 import json
 
 file = Flask(__name__)

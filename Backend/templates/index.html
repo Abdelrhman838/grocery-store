@@ -27,10 +27,10 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav visible-lg visible-md limit-chars">
                                 <ul class="breadcrumb">
-                                    <a href="index.html">
+                                    <a href="{{ url_for('dashboard') }}">
                                         <i class="zmdi zmdi-view-dashboard zmdi-hc-fw" title="Orders"></i>
                                     </a>
-                                    <a href="manage-product.html">
+                                    <a href="{{ url_for('manage_products') }}">
                                         <i class="zmdi zmdi-assignment zmdi-hc-fw" title="Products"></i>
                                     </a>
                                 </ul>
@@ -49,12 +49,8 @@
                                 <div class="row mb-4">
                                     <div class="col-sm-12">
                                         <a href="{{ url_for('logout') }}" class="btn btn-sm btn-danger pull-right">Logout</a>
-                                        <a href="order.html" class="btn btn-sm btn-primary pull-right ml-3">
-                                            New Order
-                                        </a>
-                                        <a href="manage-product.html" class="btn btn-sm btn-primary pull-right">
-                                            Manage Products
-                                        </a>
+                                        <a href="{{ url_for('order') }}" class="btn btn-sm btn-primary pull-right ml-3">New Order</a>
+                                        <a href="{{ url_for('manage_products') }}" class="btn btn-sm btn-primary pull-right ml-3">Manage Products</a>
                                         
                                     </div>
                                 </div>

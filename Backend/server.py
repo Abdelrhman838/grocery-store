@@ -38,7 +38,7 @@ def dashboard():
         return redirect(url_for('login'))
     return render_template('index.html')
 
-@file.route('/manage-products')
+@file.route('/manage-product')
 def manage_products():
     if 'username' not in session:
         return redirect(url_for('login'))
@@ -49,6 +49,11 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
 
+@file.route('/order')
+def order():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    return render_template('order.html')
 
 @file.route('/getProducts', methods=["GET"])
 def get_products():

@@ -7,3 +7,7 @@ function Elfocus1(){
 function Elfocus2(){
     input2.classList.toggle("focus")
 }
+function login(){
+    const username = input1.value;
+    localStorage.setItem("username",username)
+}

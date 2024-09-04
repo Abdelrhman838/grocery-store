@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for, session
 from sql_conection import get_sql_conector
-import product_dao ,uom_dao
+import product_dao ,uom_dao, order_dao
 import json
 
 file = Flask(__name__)
@@ -54,6 +54,20 @@ def order():
     if 'username' not in session:
         return redirect(url_for('login'))
     return render_template('order.html')
+@file.route( '/insertOrder', methods=['POST'])
+def insert_order():
+    request_payload = json.loads(request.form['data'])
+    order_id = order_dao.insert_order(connection, request_payload)
+    response = jsonify({'order_id': order_id})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
+
+@file.route('/getAllOrders', methods=['GET'])
+def get_all_orders():
+    response = order_dao.get_all_orders(connection)
+    response = jsonify(response)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @file.route('/getProducts', methods=["GET"])
 def get_products():

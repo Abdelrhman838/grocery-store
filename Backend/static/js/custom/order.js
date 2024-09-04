@@ -80,5 +80,28 @@ $("#saveOrder").on("click", function(){
     }
     callApi("POST", orderSaveApiUrl, {
         'data': JSON.stringify(requestPayload)
+    }, function(response){
+        if(response.order_id) {
+            alert('Order saved successfully with ID: ' + response.order_id);
+            window.location.href = '/dashboard';  // Redirect to dashboard
+        } else {
+            alert('Error saving order. Please try again.');
+        }
     });
 });
+
+// Update the callApi function to handle the callback
+function callApi(method, url, data, callback) {
+    $.ajax({
+        method: method,
+        url: url,
+        data: data,
+        success: function(response) {
+            callback(response);
+        },
+        error: function(error) {
+            console.log(error);
+            alert('An error occurred. Please try again.');
+        }
+    });
+}

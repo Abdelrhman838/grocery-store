@@ -4,7 +4,7 @@ import product_dao ,uom_dao, order_dao
 import json
 
 file = Flask(__name__)
-file.secret_key = 'mano22'  # Change this to a random secret key
+file.secret_key = 'mano22'  
 connection = get_sql_conector()
 
 @file.route('/', methods=['GET'])
